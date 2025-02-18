@@ -1,6 +1,52 @@
+"use client"
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
+const messages = [
+  "Tu negocio puede crecer sus ventas constantemente",
+  "Tus clientes son los portavoces de tu marca",
+  "Creas tu propia comunidad",
+];
 
-import React from 'react';
+const TextSliderWithButtons = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % messages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="md:pt-[80px] absolute inset-0 flex flex-col justify-center items-center z-40">
+      {/* Slider de texto */}
+      <div className="relative w-full max-w-6xl md:h-[25vh] h-[30vh] flex items-center justify-center ">
+        {messages.map((message, index) => (
+          <p
+            key={index}
+            className={`md:px-0 px-[30px] break-words absolute w-full text-center text-white font-light transition-opacity duration-1000 leading-none 
+              ${index === currentIndex ? "opacity-100" : "opacity-0"}
+              md:text-[90px] text-6xl`}
+          >
+            {message}
+          </p>
+        ))}
+      </div>
+      {/* Botones */}
+      <div className="gap-1 mt-10 flex flex-wrap justify-center items-center space-x-4 overflow-x-auto ">
+        <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-colors text-xl whitespace-nowrap">
+          Prueba Gratis
+        </button>
+        <Link href="/planes">
+          <button className="bg-white hover:bg-gray-200 text-orange-500 font-bold py-4 px-8 rounded-lg shadow-lg transition-colors text-xl whitespace-nowrap">
+            Ver Planes
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 const Home: React.FC = () => {
   return (
@@ -8,25 +54,15 @@ const Home: React.FC = () => {
       {/* Video de fondo */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/shopify-video.webm" // Ruta al video en la carpeta public
+        src="/video-2.mp4"
         autoPlay
         loop
         muted
       />
-
-      {/* Contenido sobre el video */}
-      <div className="absolute w-full flex p-44 flex-col items-left justify-center h-full bg-black bg-opacity-50">
-        <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">Bienvenido a Triivu</h1>
-        <p className="text-white text-lg md:text-xl mb-8 text-left">Explora nuestras soluciones y planes.</p>
-        <div className="space-x-4">
-          <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
-            Soluciones
-          </button>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
-            Planes
-          </button>
-        </div>
-      </div>
+      {/* Overlay semitransparente */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Slider de texto y botones */}
+      <TextSliderWithButtons />
     </div>
   );
 };

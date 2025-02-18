@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import Navbar from "./components/Navbar.tsx"
+import Navbar from "./components/Navbar/index"
 import "./globals.css";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
-  weight: ["400"]
+  weight: ["400", "300"]
 });
 
 export const metadata: Metadata = {
