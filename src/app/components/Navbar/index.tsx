@@ -8,7 +8,8 @@ const Navbar: React.FC = () => {
   const [menuHeight, setMenuHeight] = useState<number>(0);
   const [isNavbarBlack, setIsNavbarBlack] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null!);
+
 
   const toggleMenu = (menu: string) => {
     setActiveMenu((prev) => (prev === menu ? null : menu));
