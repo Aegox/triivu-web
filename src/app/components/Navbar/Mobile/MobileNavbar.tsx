@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
-import { dropdownData } from "../Common/constants";
+import { dropdownData , DropdownItem } from "../Common/constants"
 import { FiMenu, FiX } from 'react-icons/fi';
 
 interface MobileNavbarProps {
