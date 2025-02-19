@@ -1,5 +1,5 @@
 import CategoryButton from "../Common/CategoryButton"
-import { dropdownData } from "../Common/constants"
+import { dropdownData , DropdownItem } from "../Common/constants"
 import React from 'react';
 import Link from 'next/link';
 
