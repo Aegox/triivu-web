@@ -1,28 +1,31 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import CategoryButton from "../Common/CategoryButton";
+import { dropdownData } from "../Common/constants";
 import { FiMenu, FiX } from 'react-icons/fi';
-import CategoryButton from '../Common/CategoryButton';
-import SessionLinks from '../Common/SessionLinks';
-import MobileDropdown from './MobileDropdown';
-import { dropdownData } from '../constants'; // Importación del archivo de constantes
 
-const MobileNavbar: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+interface MobileNavbarProps {
+  activeMenu: string | null;
+  toggleMenu: (menu: string) => void;
+  isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const toggleMenu = (menu: string) => {
-    if (activeMenu === menu) {
-      setActiveMenu(null);
-    } else {
-      setActiveMenu(menu);
-    }
-  };
-
+const MobileNavbar: React.FC<MobileNavbarProps> = ({
+  activeMenu,
+  toggleMenu,
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
+}) => {
   return (
-    <nav className="md:hidden fixed top-0 left-0 w-full bg-[var(--color-black)] text-[var(--color-white)] z-[var(--navbar-z-index)] transition-transform duration-[var(--transition-duration)]">
-      <div className="max-w-7xl mx-auto flex justify-between items-center w-full p-[var(--navbar-padding)] relative z-[var(--navbar-z-index)]">
-        <Link href="/" className="text-[var(--color-primary)] text-2xl font-bold cursor-pointer mr-4">
+    <>
+      {/* Barra Principal Mobile */}
+      <div className="flex justify-between items-center max-w-[85%] mx-auto p-[var(--navbar-padding)] relative z-[var(--navbar-z-index)]">
+        <Link
+          href="/"
+          className="text-[var(--color-primary)] text-2xl font-bold cursor-pointer mr-4"
+        >
           TRIIVU
         </Link>
         <button
@@ -33,6 +36,7 @@ const MobileNavbar: React.FC = () => {
         </button>
       </div>
 
+      {/* Menú overlay Mobile */}
       <div
         className={`bg-[var(--color-black)] text-[var(--color-white)] w-full fixed top-0 left-0 h-screen flex flex-col pt-20 px-4 transition-transform duration-[var(--transition-duration)] ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
@@ -45,7 +49,25 @@ const MobileNavbar: React.FC = () => {
           onClick={() => toggleMenu('fidelizacion')}
           variant="mobile"
         />
-        <MobileDropdown items={dropdownData.fidelizacion} active={activeMenu === 'fidelizacion'} />
+        <div
+          className={`flex flex-col w-full overflow-hidden transition-all duration-[var(--transition-duration)] ${
+            activeMenu === 'fidelizacion' ? 'max-h-96' : 'max-h-0'
+          }`}
+        >
+          {dropdownData.fidelizacion.map((item: DropdownItem) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center justify-center px-4 py-2 hover:bg-[var(--color-gray-800)]"
+              >
+                <Icon className="mr-2" />
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
 
         <CategoryButton
           id="referidos"
@@ -54,7 +76,25 @@ const MobileNavbar: React.FC = () => {
           onClick={() => toggleMenu('referidos')}
           variant="mobile"
         />
-        <MobileDropdown items={dropdownData.referidos} active={activeMenu === 'referidos'} />
+        <div
+          className={`flex flex-col w-full overflow-hidden transition-all duration-[var(--transition-duration)] ${
+            activeMenu === 'referidos' ? 'max-h-96' : 'max-h-0'
+          }`}
+        >
+          {dropdownData.referidos.map((item: DropdownItem) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center justify-center px-4 py-2 hover:bg-[var(--color-gray-800)]"
+              >
+                <Icon className="mr-2" />
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
 
         <CategoryButton
           id="planes"
@@ -64,11 +104,23 @@ const MobileNavbar: React.FC = () => {
           href="/planes"
         />
 
-        <SessionLinks variant="mobile" />
+        <div className="mt-auto w-full flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 pb-10">
+          <Link
+            href="/login"
+            className="w-full md:w-auto text-[var(--color-white)] hover:bg-[var(--color-gray-700)] px-3 py-2 rounded-md text-center"
+          >
+            Iniciar Sesión
+          </Link>
+          <Link
+            href="/register"
+            className="w-full md:w-auto bg-[var(--color-white)] text-[var(--color-primary)] hover:bg-[var(--color-gray-100)] px-3 py-2 rounded-md text-center"
+          >
+            Registrarse
+          </Link>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
-
 export default MobileNavbar;
 
