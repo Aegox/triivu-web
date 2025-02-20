@@ -104,20 +104,21 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           href="/planes"
         />
 
-        <div className="mt-auto w-full flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 pb-10">
-          <Link
-            href="/login"
-            className="w-full md:w-auto text-[var(--color-white)] hover:bg-[var(--color-gray-700)] px-3 py-2 rounded-md text-center"
-          >
-            Iniciar Sesión
-          </Link>
-          <Link
-            href="/register"
-            className="w-full md:w-auto bg-[var(--color-white)] text-[var(--color-primary)] hover:bg-[var(--color-gray-100)] px-3 py-2 rounded-md text-center"
-          >
-            Registrarse
-          </Link>
-        </div>
+        
+<div className="mt-auto w-full flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+  <Link
+    href="/login"
+    className="w-full md:w-auto text-[var(--color-white)] hover:bg-[var(--color-gray-700)] px-3 py-2 rounded-md text-center"
+  >
+    Iniciar Sesión
+  </Link>
+  <Link
+    href="/register"
+    className="w-full md:w-auto bg-[var(--color-white)] text-[var(--color-primary)] hover:bg-[var(--color-gray-100)] px-3 py-2 rounded-md text-center"
+  >
+    Registrarse
+  </Link>
+</div>
       </div>
     </>
   );
