@@ -34,7 +34,7 @@ const TextSliderWithButtons = () => {
         ))}
       </div>
       {/* Botones */}
-      <div className="md:gap-4 gap-2 md:mt-12 mt-14 flex flex-wrap justify-center items-center w-70%">
+      <div className="md:gap-4 gap-2 md:mt-12 mt-14 flex flex-wrap justify-center items-center min-w-full px-3">
         <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-colors text-xl whitespace-nowrap">
           Prueba Gratis
         </button>
