@@ -4,7 +4,7 @@ import MobileNavbar from "./Mobile/MobileNavbar"
 import DesktopNavbar from "./Desktop/DesktopNavbar"
 
 const Navbar: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string>("");
   const [menuHeight, setMenuHeight] = useState<number>(0);
   const [isNavbarBlack, setIsNavbarBlack] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
