@@ -1,15 +1,3 @@
-"use client";
-import {
-  FaMoneyBillWave,
-  FaHandHoldingUsd,
-  FaChartLine,
-  FaGift,
-  FaUserPlus,
-  FaBullhorn,
-  FaPiggyBank,
-  FaHandshake,
-} from 'react-icons/fa';
-
 export interface DropdownItem {
   title: string;
   items: string[];
