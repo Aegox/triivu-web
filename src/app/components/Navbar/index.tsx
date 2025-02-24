@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
 
   const toggleMenu = (menu: string) => {
-    setActiveMenu((prev) => (prev === menu ? null : menu));
+    setActiveMenu((prev): string => (prev === menu ? "": menu));
   };
 
   useEffect(() => {
