@@ -4,7 +4,7 @@ import MobileNavbar from "./Mobile/MobileNavbar"
 import DesktopNavbar from "./Desktop/DesktopNavbar"
 
 const Navbar: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string>("");
   const [menuHeight, setMenuHeight] = useState<number>(0);
   const [isNavbarBlack, setIsNavbarBlack] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
 
   const toggleMenu = (menu: string) => {
-    setActiveMenu((prev: string | null): string  => (prev === menu ? null: menu));
+    setActiveMenu((prev) => (prev === menu ? "": menu));
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
   // Efecto combinado: navbar negro al hacer scroll o tener un menú activo
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50 || activeMenu !== null) {
+      if (window.scrollY > 50 || activeMenu !== "") {
         setIsNavbarBlack(true);
       } else {
         setIsNavbarBlack(false);
