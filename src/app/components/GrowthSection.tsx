@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const CommunityGrowthSection = () => {
   return (
-    <section className="flex flex-col md:gap-8 gap-10 h-full md:h-[600px] md:flex-row items-center justify-between px-6 py-24 md:px-16 bg-[#0A0A0A]">
+    <section className="flex flex-col gap-10 h-full md:h-[600px] md:flex-row items-center justify-between px-6 py-24 md:pr-32 bg-[#0A0A0A]">
       {/* Texto */}
-      <div className="md:w-1/3 text-center md:text-left">
+      <div className="md:w-1/3 text-center md:m-auto md:text-left">
         <h2 className="text-4xl font-bold text-white mb-8">
           CREA UNA COMUNIDAD, QUE CREZCA Y TE HAGA CRECER
         </h2>
@@ -15,7 +15,6 @@ const CommunityGrowthSection = () => {
             ¡Comienza ahora!
         </Link>
       </div>
-      
       {/* Video */}
       <div className="md:w-1/2 md:h-full mt-6 md:mt-0 flex justify-center">
         <video className="w-full rounded-lg shadow-lg" autoPlay loop muted>
