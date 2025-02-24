@@ -4,7 +4,7 @@ import MobileNavbar from "./Mobile/MobileNavbar"
 import DesktopNavbar from "./Desktop/DesktopNavbar"
 
 const Navbar: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string>("");
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuHeight, setMenuHeight] = useState<number>(0);
   const [isNavbarBlack, setIsNavbarBlack] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
 
   const toggleMenu = (menu: string) => {
-    setActiveMenu((prev): string => (prev === menu ? "": menu));
+    setActiveMenu((prev): string | null => (prev === menu ? null: menu));
   };
 
   useEffect(() => {
