@@ -2,9 +2,10 @@ import CategoryButton from "../Common/CategoryButton"
 import { dropdownData , DropdownItem } from "../Common/constants"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface DesktopNavbarProps {
-  activeMenu: string | null;
+  activeMenu: string;
   toggleMenu: (menu: string) => void;
   menuHeight: number;
   menuRef: React.RefObject<HTMLDivElement>;
@@ -16,6 +17,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   menuHeight,
   menuRef,
 }) => {
+  console.log(menuHeight)
   return (
     <>
       {/* Barra Principal Desktop */}
@@ -23,23 +25,16 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
         <div className="flex items-center">
           <Link
             href="/"
-            className="text-[var(--color-primary)] text-2xl font-bold cursor-pointer mr-4"
+            className=""
           >
-            TRIIVU
+            <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50}/>
           </Link>
-          <div className="hidden md:flex space-x-4 items-center justify-center">
+            <div className="pl-4 hidden md:flex space-x-4 items-center justify-center">
             <CategoryButton
-              id="fidelizacion"
-              label="Fidelización"
-              active={activeMenu === 'fidelizacion'}
-              onClick={() => toggleMenu('fidelizacion')}
-              variant="desktop"
-            />
-            <CategoryButton
-              id="referidos"
-              label="Referidos"
-              active={activeMenu === 'referidos'}
-              onClick={() => toggleMenu('referidos')}
+              id="soluciones"
+              label="Soluciones"
+              active={activeMenu === 'soluciones'}
+              onClick={() => toggleMenu('soluciones')}
               variant="desktop"
             />
             <CategoryButton
@@ -69,30 +64,24 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
 
       {/* Menú desplegable Desktop */}
       <div
-        className="hidden md:block bg-[var(--color-black)] text-[var(--color-white)] shadow-lg w-full transition-all duration-[var(--transition-duration)] ease-in-out overflow-hidden"
-        style={{ height: menuHeight }}
+        className="hidden md:block bg-[var(--color-black)] text-[var(--color-white)] shadow-lg w-full transition-all duration-[var(--transition-duration)] ease-in-out overflow-hidden h-full"
+        style={{ height: menuHeight}}
       >
-        <div className="max-w-7xl mx-auto py-4 px-0" ref={menuRef}>
-          {activeMenu && dropdownData[activeMenu] && (
-            <div className="flex flex-col md:flex-row justify-around items-center w-full">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                {dropdownData[activeMenu].map((item: DropdownItem) => {
-                  const Icon = item.icon;
+        <div className="flex justify-center gap-10 mx-auto py-2 px-20" ref={menuRef}>
+          {dropdownData.soluciones.map((item: DropdownItem , index : number) => {
                   return (
-                    <li key={item.href} className="flex items-center justify-center">
-                      <Icon className="mr-2" />
-                      <Link
-                        href={item.href}
-                        className="block px-4 py-2 hover:bg-[var(--color-gray-800)]"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
+                    <section key={index} className="flex flex-col gap-2 justify-between items-center w-full">
+                      <span className="text-center py-2 text-lg">{item.title}</span>
+                      <ul className="flex list-disc flex-col gap-1 text-sm">
+                        <li className="">{item.items[0]}</li>
+                        <li className="">{item.items[1]}</li>
+                        <li className="">{item.items[2]}</li>
+                        {item.items[3] && <li className="">{item.items[3]}</li>}
+                      </ul>
+                      <button className="w-auto sefl-center bg-orange-600 hover:bg-orange-700 text-white font-bold my-5 py-2 px-4 rounded-lg shadow-lg transition-colors text-sm whitespace-nowrap">Mas Información</button>
+                    </section>
                   );
                 })}
-              </ul>
-            </div>
-          )}
         </div>
       </div>
     </>

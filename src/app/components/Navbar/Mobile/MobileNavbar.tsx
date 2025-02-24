@@ -4,6 +4,7 @@ import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
 import { dropdownData, DropdownItem } from "../Common/constants";
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from "next/image";
 
 interface MobileNavbarProps {
   activeMenu: string | null;
@@ -21,12 +22,12 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   return (
     <>
       {/* Barra Principal Mobile */}
-      <div className="flex justify-between items-center max-w-[85%] mx-auto p-[var(--navbar-padding)] relative z-[var(--navbar-z-index)]">
+      <div className="flex justify-between items-center max-w-[85%] mx-auto py-[16px] relative z-[var(--navbar-z-index)]">
         <Link
           href="/"
-          className="text-[var(--color-primary)] text-2xl font-bold cursor-pointer mr-4"
+          className=""
         >
-          TRIIVU
+          <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50}/>
         </Link>
         <button
           className="text-[var(--color-white)] relative z-[var(--navbar-z-index)]"
@@ -44,57 +45,31 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
         style={{ height: "100dvh" }}
       >
         <CategoryButton
-          id="fidelizacion"
-          label="Fidelización"
-          active={activeMenu === 'fidelizacion'}
-          onClick={() => toggleMenu('fidelizacion')}
+          id="soluciones"
+          label="Soluciones"
+          active={activeMenu === 'soluciones'}
+          onClick={() => toggleMenu('soluciones')}
           variant="mobile"
         />
         <div
-          className={`flex flex-col w-full overflow-hidden transition-all duration-[var(--transition-duration)] ${
-            activeMenu === 'fidelizacion' ? 'max-h-96' : 'max-h-0'
+          className={`flex flex-col w-full gap-5 overflow-scroll transition-all duration-[var(--transition-duration)] ${
+            activeMenu === 'soluciones' ? 'max-h-full flex' : 'max-h-0'
           }`}
         >
-          {dropdownData.fidelizacion.map((item: DropdownItem) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center justify-center px-4 py-2 hover:bg-[var(--color-gray-800)]"
-              >
-                <Icon className="mr-2" />
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
-
-        <CategoryButton
-          id="referidos"
-          label="Referidos"
-          active={activeMenu === 'referidos'}
-          onClick={() => toggleMenu('referidos')}
-          variant="mobile"
-        />
-        <div
-          className={`flex flex-col w-full overflow-hidden transition-all duration-[var(--transition-duration)] ${
-            activeMenu === 'referidos' ? 'max-h-96' : 'max-h-0'
-          }`}
-        >
-          {dropdownData.referidos.map((item: DropdownItem) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center justify-center px-4 py-2 hover:bg-[var(--color-gray-800)]"
-              >
-                <Icon className="mr-2" />
-                {item.label}
-              </Link>
-            );
-          })}
+          {dropdownData.soluciones.map((item: DropdownItem, index : number) => {
+                  return (
+                    <section key={index} className="flex px-4 flex-col items-center w-full">
+                      <span className="w-full py-2 text-lg">{item.title}</span>
+                      <ul className="flex list-disc pl-5 flex-col gap-1 w-full text-sm w-full">
+                        <li className="">{item.items[0]}</li>
+                        <li className="">{item.items[1]}</li>
+                        <li className="">{item.items[2]}</li>
+                        {item.items[3] && <li className="">{item.items[3]}</li>}
+                      </ul>
+                      <button className="w-auto sefl-center bg-orange-600 hover:bg-orange-700 text-white font-bold my-5 py-2 px-4 rounded-lg shadow-lg transition-colors text-sm whitespace-nowrap">Mas Información</button>
+                    </section>
+                  );
+                })}
         </div>
 
         <CategoryButton

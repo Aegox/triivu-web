@@ -19,27 +19,27 @@ const TextSliderWithButtons = () => {
   }, []);
 
   return (
-    <div className="md:pt-[80px] pt-[60px] absolute inset-0 flex flex-col justify-center items-center z-40">
+    <div className="absolute inset-0 flex flex-col justify-center items-center z-40">
       {/* Slider de texto */}
-      <div className="relative w-full max-w-6xl md:h-[25vh] h-[40vh] flex items-center justify-center ">
+      <div className="relative w-full max-w-6xl md:h-[20vh] h-[15vh] flex items-center justify-center ">
         {messages.map((message, index) => (
           <p
             key={index}
             className={`md:px-0 px-[30px] break-words absolute w-full text-center text-white font-light transition-opacity duration-1000 leading-none 
               ${index === currentIndex ? "opacity-100" : "opacity-0"}
-              md:text-[80px] text-5xl`}
+              md:text-6xl text-3xl`}
           >
             {message}
           </p>
         ))}
       </div>
       {/* Botones */}
-      <div className="md:gap-4 gap-2 md:mt-12 mt-14 flex flex-wrap justify-center items-center min-w-full px-3">
-        <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-colors text-xl whitespace-nowrap">
+      <div className="md:gap-4 gap-2 md:mt-6 mt-1 flex flex-wrap justify-center items-center w-full px-3">
+        <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-colors text-md whitespace-nowrap">
           Prueba Gratis
         </button>
         <Link href="/planes">
-          <button className="bg-white hover:bg-gray-200 text-orange-500 font-bold py-4 px-8 rounded-lg shadow-lg transition-colors text-xl whitespace-nowrap">
+          <button className="bg-white hover:bg-gray-200 text-orange-500 font-bold py-2 px-6 rounded-lg shadow-lg transition-colors text-md whitespace-nowrap">
             Ver Planes
           </button>
         </Link>
