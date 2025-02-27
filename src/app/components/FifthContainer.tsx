@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import { FaShareAlt, FaCoins, FaUserPlus, FaChartLine } from 'react-icons/fa';
