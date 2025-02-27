@@ -76,7 +76,9 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
         style={{ height: menuHeight }}
       >
         <div className="flex justify-center gap-10 pt-2 pb-8 px-10" ref={menuRef}>
-          {soluciones.map((solucion, index) => (
+          {soluciones.map((solucion, index) => {
+            const IconComponent = iconMapping[solucion.title as keyof typeof iconMapping] || FaHeart;
+            return (
             <React.Fragment key={index}>
               {/* Sección */}
               <section className="group flex flex-col gap-4 w-[280px] cursor-pointer">
@@ -103,7 +105,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
                 </div>
               )}
             </React.Fragment>
-          ))}
+          )})}
         </div>
       </div>
     </>

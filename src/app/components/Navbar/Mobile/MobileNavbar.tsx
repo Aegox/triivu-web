@@ -67,7 +67,9 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           }`}
         >
         <div className="flex flex-col justify-center gap-10 pt-2 pb-8 px-10">
-          {soluciones.map((solucion, index) => (
+          {soluciones.map((solucion, index) => {
+            const IconComponent = iconMapping[solucion.title as keyof typeof iconMapping] || FaHeart;
+            return (
             <React.Fragment key={index}>
               {/* Sección */}
               <section className="group flex flex-col gap-4 w-full cursor-pointer">
@@ -94,7 +96,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
                 </div>
               )}
             </React.Fragment>
-          ))}
+          )})}
         </div>
 
         </div>
