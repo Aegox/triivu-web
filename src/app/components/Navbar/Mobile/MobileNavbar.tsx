@@ -4,6 +4,17 @@ import CategoryButton from "../Common/CategoryButton";
 import { dropdownData, DropdownItem } from "../Common/constants";
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
+import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
+
+// Mapeo de iconos según el título
+const iconMapping = {
+  Fidelización: FaHeart,
+  Referidos: FaUserFriends,
+  Comisiones: FaMoneyBillWave,
+};
+
+const soluciones = dropdownData.soluciones;
+
 
 interface MobileNavbarProps {
   activeMenu: string | null;
@@ -55,20 +66,37 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             activeMenu === 'soluciones' ? 'max-h-full flex' : 'max-h-0'
           }`}
         >
-          {dropdownData.soluciones.map((item: DropdownItem, index : number) => {
-                  return (
-                    <section key={index} className="flex px-4 flex-col items-center w-full">
-                      <span className="w-full py-2 text-lg">{item.title}</span>
-                      <ul className="flex list-disc pl-5 flex-col gap-1 w-full text-sm w-full">
-                        <li className="">{item.items[0]}</li>
-                        <li className="">{item.items[1]}</li>
-                        <li className="">{item.items[2]}</li>
-                        {item.items[3] && <li className="">{item.items[3]}</li>}
-                      </ul>
-                      <button className="w-auto sefl-center bg-orange-600 hover:bg-orange-700 text-white font-bold my-5 py-2 px-4 rounded-lg shadow-lg transition-colors text-sm whitespace-nowrap">Mas Información</button>
-                    </section>
-                  );
-                })}
+        <div className="flex flex-col justify-center gap-10 pt-2 pb-8 px-10">
+          {soluciones.map((solucion, index) => (
+            <React.Fragment key={index}>
+              {/* Sección */}
+              <section className="group flex flex-col gap-4 w-full cursor-pointer">
+                <div className="flex items-center justify-center gap-2 relative">
+                  {React.createElement(iconMapping[solucion.title], {
+                    className: "text-orange-400 text-xl",
+                  })}
+                  <span className="text-lg text-orange-400 relative inline-block">
+                    {solucion.title}
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  </span>
+                </div>
+                <ul className="flex list-disc flex-col gap-1 text-sm">
+                  {solucion.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* Divisor excepto después del último ítem */}
+              {index < soluciones.length - 1 && (
+                <div className="flex items-center px-2 w-full">
+                  <div className="h-[2px] w-full bg-white"></div>
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
         </div>
 
         <CategoryButton

@@ -6,7 +6,7 @@ export interface DropdownItem {
 export const dropdownData: Record<string, DropdownItem[]> = {
   soluciones: [
     { 
-      title: "Fidelización por recarga", 
+      title: "Fidelización", 
       items: [
         "Tus clientes recargan saldo",
         "Tu tienes el control del dinero de tu cliente",
@@ -23,7 +23,7 @@ export const dropdownData: Record<string, DropdownItem[]> = {
         "Tus clientes son los embajadores de tu marca"
       ]
     },{ 
-      title: "Comisión por venta con influenciadores", 
+      title: "Comisiones", 
       items: [
         "Puedes medir las ventas por influenciador o vendedor",
         "Pagas solo bajo resultados",

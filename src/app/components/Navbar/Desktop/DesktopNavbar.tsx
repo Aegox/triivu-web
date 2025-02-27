@@ -1,8 +1,18 @@
-import CategoryButton from "../Common/CategoryButton"
-import { dropdownData , DropdownItem } from "../Common/constants"
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import CategoryButton from "../Common/CategoryButton";
+import { dropdownData, DropdownItem } from "../Common/constants";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
+
+// Mapeo de iconos según el título
+const iconMapping = {
+  Fidelización: FaHeart,
+  Referidos: FaUserFriends,
+  Comisiones: FaMoneyBillWave,
+};
+
+const soluciones = dropdownData.soluciones;
 
 interface DesktopNavbarProps {
   activeMenu: string;
@@ -17,24 +27,22 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   menuHeight,
   menuRef,
 }) => {
-  console.log(menuHeight)
+  console.log(menuHeight);
+
   return (
     <>
       {/* Barra Principal Desktop */}
       <div className="max-w-[85%] mx-auto flex justify-between items-center w-full p-[var(--navbar-padding)] relative z-[var(--navbar-z-index)]">
         <div className="flex items-center">
-          <Link
-            href="/"
-            className=""
-          >
-            <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50}/>
+          <Link href="/">
+            <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50} />
           </Link>
-            <div className="pl-4 hidden md:flex space-x-4 items-center justify-center">
+          <div className="pl-4 hidden md:flex space-x-4 items-center justify-center">
             <CategoryButton
               id="soluciones"
               label="Soluciones"
-              active={activeMenu === 'soluciones'}
-              onClick={() => toggleMenu('soluciones')}
+              active={activeMenu === "soluciones"}
+              onClick={() => toggleMenu("soluciones")}
               variant="desktop"
             />
             <CategoryButton
@@ -65,26 +73,42 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
       {/* Menú desplegable Desktop */}
       <div
         className="hidden md:block bg-[var(--color-black)] text-[var(--color-white)] shadow-lg w-full transition-all duration-[var(--transition-duration)] ease-in-out overflow-hidden h-full"
-        style={{ height: menuHeight}}
+        style={{ height: menuHeight }}
       >
-        <div className="flex justify-center gap-10 mx-auto py-2 px-20" ref={menuRef}>
-          {dropdownData.soluciones.map((item: DropdownItem , index : number) => {
-                  return (
-                    <section key={index} className="flex flex-col gap-2 justify-between items-center w-full">
-                      <span className="text-center py-2 text-lg">{item.title}</span>
-                      <ul className="flex list-disc flex-col gap-1 text-sm">
-                        <li className="">{item.items[0]}</li>
-                        <li className="">{item.items[1]}</li>
-                        <li className="">{item.items[2]}</li>
-                        {item.items[3] && <li className="">{item.items[3]}</li>}
-                      </ul>
-                      <button className="w-auto sefl-center bg-orange-600 hover:bg-orange-700 text-white font-bold my-5 py-2 px-4 rounded-lg shadow-lg transition-colors text-sm whitespace-nowrap">Mas Información</button>
-                    </section>
-                  );
-                })}
+        <div className="flex justify-center gap-10 pt-2 pb-8 px-10" ref={menuRef}>
+          {soluciones.map((solucion, index) => (
+            <React.Fragment key={index}>
+              {/* Sección */}
+              <section className="group flex flex-col gap-4 w-[280px] cursor-pointer">
+                <div className="flex items-center justify-center gap-2 relative">
+                  {React.createElement(iconMapping[solucion.title], {
+                    className: "text-orange-400 text-xl",
+                  })}
+                  <span className="text-lg text-orange-400 relative inline-block">
+                    {solucion.title}
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  </span>
+                </div>
+                <ul className="flex list-disc flex-col gap-1 text-sm">
+                  {solucion.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* Divisor excepto después del último ítem */}
+              {index < soluciones.length - 1 && (
+                <div className="flex items-center px-2 pt-12 h-[150px]">
+                  <div className="w-[2px] h-full bg-white"></div>
+                </div>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </>
   );
 };
+
 export default DesktopNavbar;
+

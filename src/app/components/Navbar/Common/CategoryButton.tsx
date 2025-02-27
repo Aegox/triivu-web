@@ -31,7 +31,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
         <span>{label}</span>
       </div>
       <span
-        className={`block h-0.5 bg-[var(--color-white)] transition-all duration-[var(--transition-duration)] mt-1 ${active ? 'w-full' : 'w-0'}`}
+        className={`block h-0.5 bg-orange-400 transition-all duration-[var(--transition-duration)] mt-1 ${active ? 'w-full' : 'w-0'}`}
       ></span>
     </>
   );
