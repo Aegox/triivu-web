@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
-import { dropdownData, DropdownItem } from "../Common/constants";
+import { dropdownData } from "../Common/constants";
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
