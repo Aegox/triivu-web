@@ -75,17 +75,21 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
         className="hidden md:block bg-[var(--color-black)] text-[var(--color-white)] shadow-lg w-full transition-all duration-[var(--transition-duration)] ease-in-out overflow-hidden h-full"
         style={{ height: menuHeight }}
       >
-        <div className="flex justify-center gap-10 pt-2 pb-8 px-10" ref={menuRef}>
-          {soluciones.map((solucion, index) => {
-            const IconComponent = iconMapping[solucion.title as keyof typeof iconMapping] || FaHeart;
-            return (
+        <div className="flex justify-center gap-10 pb-10 px-10" ref={menuRef}>
+          {soluciones.map((solucion, index) => (
             <React.Fragment key={index}>
               {/* Sección */}
               <section className="group flex flex-col gap-4 w-[280px] cursor-pointer">
                 <div className="flex items-center justify-center gap-2 relative">
-                  {React.createElement(iconMapping[solucion.title], {
-                    className: "text-orange-400 text-xl",
-                  })}
+                  {index === 0 && (
+                    <FaHeart className="text-orange-400 text-xl" />
+                  )}
+                  {index === 1 && (
+                    <FaUserFriends className="text-orange-400 text-xl" />
+                  )}
+                  {index === 2 && (
+                    <FaMoneyBillWave className="text-orange-400 text-xl" />
+                  )}
                   <span className="text-lg text-orange-400 relative inline-block">
                     {solucion.title}
                     <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
@@ -105,8 +109,8 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
                 </div>
               )}
             </React.Fragment>
-          )})}
-        </div>
+          ))}
+        </div>      
       </div>
     </>
   );

@@ -6,15 +6,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
 
-// Mapeo de iconos según el título
-const iconMapping = {
-  Fidelización: FaHeart,
-  Referidos: FaUserFriends,
-  Comisiones: FaMoneyBillWave,
-};
-
 const soluciones = dropdownData.soluciones;
-
 
 interface MobileNavbarProps {
   activeMenu: string | null;
@@ -33,11 +25,8 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
     <>
       {/* Barra Principal Mobile */}
       <div className="flex justify-between items-center max-w-[85%] mx-auto py-[16px] relative z-[var(--navbar-z-index)]">
-        <Link
-          href="/"
-          className=""
-        >
-          <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50}/>
+        <Link href="/">
+          <Image src="/logo.svg" alt="the Triivu logo" width={90} height={50} />
         </Link>
         <button
           className="text-[var(--color-white)] relative z-[var(--navbar-z-index)]"
@@ -66,39 +55,42 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             activeMenu === 'soluciones' ? 'max-h-full flex' : 'max-h-0'
           }`}
         >
-        <div className="flex flex-col justify-center gap-10 pt-2 pb-8 px-10">
-          {soluciones.map((solucion, index) => {
-            const IconComponent = iconMapping[solucion.title as keyof typeof iconMapping] || FaHeart;
-            return (
-            <React.Fragment key={index}>
-              {/* Sección */}
-              <section className="group flex flex-col gap-4 w-full cursor-pointer">
-                <div className="flex items-center justify-center gap-2 relative">
-                  {React.createElement(iconMapping[solucion.title], {
-                    className: "text-orange-400 text-xl",
-                  })}
-                  <span className="text-lg text-orange-400 relative inline-block">
-                    {solucion.title}
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                  </span>
-                </div>
-                <ul className="flex list-disc flex-col gap-1 text-sm">
-                  {solucion.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </section>
+          <div className="flex flex-col justify-center gap-10 pt-2 pb-8 px-10">
+            {soluciones.map((solucion, index) => (
+              <React.Fragment key={index}>
+                {/* Sección */}
+                <section className="group flex flex-col gap-4 w-full cursor-pointer">
+                  <div className="flex items-center justify-center gap-2 relative">
+                    {index === 0 && (
+                      <FaHeart className="text-orange-400 text-xl" />
+                    )}
+                    {index === 1 && (
+                      <FaUserFriends className="text-orange-400 text-xl" />
+                    )}
+                    {index === 2 && (
+                      <FaMoneyBillWave className="text-orange-400 text-xl" />
+                    )}
+                    <span className="text-lg text-orange-400 relative inline-block">
+                      {solucion.title}
+                      <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </span>
+                  </div>
+                  <ul className="flex list-disc flex-col gap-1 text-sm">
+                    {solucion.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </section>
 
-              {/* Divisor excepto después del último ítem */}
-              {index < soluciones.length - 1 && (
-                <div className="flex items-center px-2 w-full">
-                  <div className="h-[2px] w-full bg-white"></div>
-                </div>
-              )}
-            </React.Fragment>
-          )})}
-        </div>
-
+                {/* Divisor excepto después del último ítem */}
+                {index < soluciones.length - 1 && (
+                  <div className="flex items-center px-2 w-full">
+                    <div className="h-[2px] w-full bg-white"></div>
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
 
         <CategoryButton
@@ -129,3 +121,4 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
 };
 
 export default MobileNavbar;
+
