@@ -5,13 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
 
-// Mapeo de iconos según el título
-const iconMapping = {
-  Fidelización: FaHeart,
-  Referidos: FaUserFriends,
-  Comisiones: FaMoneyBillWave,
-};
-
 const soluciones = dropdownData.soluciones;
 
 interface DesktopNavbarProps {
