@@ -17,7 +17,7 @@ export const dropdownData: Record<string, DropdownItem[]> = {
     { 
       title: "Referidos", 
       items: [
-        "Tus clientes, traen más clientes", 
+        "Tus clientes traen más clientes", 
         "Marketing voz a voz",
         "Ahorro en publicidad",
         "Tus clientes son los embajadores de tu marca"

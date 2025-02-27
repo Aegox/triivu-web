@@ -16,8 +16,8 @@ const CommunityGrowthSection = () => {
         </Link>
       </div>
       {/* Video */}
-      <div className="md:w-1/2 md:h-full mt-6 md:mt-0 flex justify-center">
-        <video className="w-full rounded-lg shadow-lg" autoPlay loop muted>
+      <div className="md:w-1/2 md:h-full mt-6 md:mt-0 flex rounded-md justify-center">
+        <video className="w-full rounded-md shadow-lg" autoPlay loop muted>
           <source src="/community.webm" type="video/mp4" />
           Tu navegador no soporta videos.
         </video>
