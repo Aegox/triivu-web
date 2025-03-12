@@ -6,7 +6,8 @@ interface PricingCardProps {
   title: string;
   description: string;
   features: string[];
-  footerText?: string;
+  footerTextTitle: string;
+  footerTextInfo: string;
   buttonText: string;
 }
 
