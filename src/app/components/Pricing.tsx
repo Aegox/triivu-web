@@ -31,7 +31,7 @@ const pagoPorUso = {
   buttonText: "¡Registrate!",
 };
 
-const Pricing: Reac.FC = () => {
+const Pricing: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-28 px-5 xl:py-32 xl:px-20 w-full h-full">
       <h1 className="xl:w-[80%] text-2xl xl:text-3xl font-bold text-gray-800 mb-4 text-center">Apalancate de tus clientes, y ten hasta un 30% de tu ventas mensuales desde los primeros días del mes en tu flujo de caja.</h1>
