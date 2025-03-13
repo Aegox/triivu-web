@@ -55,7 +55,7 @@ const cardsData: cardDataProps[] = [
   },
 ];
 
-const cardsData2: cardDataProps = [
+const cardsData2: cardDataProps[] = [
   {
     title: 'URL PERSONALIZADA',
     description: 'Aplicación directamente con tu dominio y URL.',
