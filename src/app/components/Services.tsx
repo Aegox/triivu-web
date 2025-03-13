@@ -4,6 +4,8 @@ import { cardDataProps } from './ServicesRender';
 
 interface ServicesProps {
   cardsData: cardDataProps[];
+  title: string;
+  description: string;
 }
 
 const Services: React.FC<ServicesProps> = ({ cardsData , title , description }) => {
