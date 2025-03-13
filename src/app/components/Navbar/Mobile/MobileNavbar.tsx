@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
@@ -24,6 +25,10 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   setIsMobileMenuOpen,
 }) => {
   const { scrollToPricing } = useScrollToPricing();
+  const handlePlanesClick = () => {
+    scrollToPricing();
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -102,10 +107,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           label="Planes"
           active={false}
           variant="mobile"
-          onClick={(e) => {
-            scrollToPricing(e); 
-            setIsMobileMenuOpen(!isMobileMenuOpen)
-          }}
+          onClick={handlePlanesClick}
         />
 
         <div className="mt-auto flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">

@@ -1,12 +1,10 @@
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import { useCallback } from 'react'; // Importa useCallback
 
 const useScrollToPricing = () => {
   const router = useRouter();
 
-  const scrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
+  const scrollToPricing = useCallback(() => {
     const element = document.getElementById("planes");
     if (element) {
       window.scrollTo({
@@ -24,12 +22,9 @@ const useScrollToPricing = () => {
         }
       });
     }
-  };
+  }, [router]); // router como dependencia de useCallback
 
   return { scrollToPricing };
 };
 
 export default useScrollToPricing;
-
-
-

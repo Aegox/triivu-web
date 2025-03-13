@@ -44,7 +44,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
               label="Planes"
               active={false}
               variant="desktop"
-              onClick={(e) => scrollToPricing(e)}
+              onClick={scrollToPricing}
             />
           </div>
         </div>
