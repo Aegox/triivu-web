@@ -7,12 +7,17 @@ export interface cardDataProps {
   icon: string;
 }
 
-const cardDataFree: cardDataProps = {
+interface cards {
+  title: string;
+  description: string;
+}
+
+const cardDataFree: cards = {
   title: "Servicios Gratuitos",
   description: "Estos productos son gratuitos hasta que acaben tus créditos."
 }
 
-const cardDataPay: cardDataProps = {
+const cardDataPay: cards = {
   title: "Servicios de Plan Pago",
   description: ""
 }
@@ -80,7 +85,7 @@ const cardsData2: cardDataProps = [
 
 const ServicesRender: React.FC = () => {
   return (
-    <div>
+    <div className="flex flex-col  gap-28 py-32 bg-gray-50">
       <Services cardsData={cardsData} title={cardDataFree.title} description={cardDataFree.description}/>     
       <Services cardsData={cardsData2} title={cardDataPay.title} description={cardDataPay.description}/>
     </div>
