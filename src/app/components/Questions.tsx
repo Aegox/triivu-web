@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import faqData from "../constants/Questions.ts";
+import { faqData } from "../constants/Questions.ts";
 
 const Questions: React.FC = () => {
   
