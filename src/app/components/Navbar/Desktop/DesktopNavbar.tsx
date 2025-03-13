@@ -1,9 +1,10 @@
-import CategoryButton from "../Common/CategoryButton";
-import { dropdownData } from "../Common/constants";
 import React from "react";
+import CategoryButton from "../Common/CategoryButton";
+import { dropdownData } from "../../../constants/Navbar.ts";
 import Link from "next/link";
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
+import useScrollToPricing from "../../../constants/useScroll.ts";
 
 const soluciones = dropdownData.soluciones;
 
@@ -20,7 +21,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   menuHeight,
   menuRef,
 }) => {
-  console.log(menuHeight);
+  const { scrollToPricing } = useScrollToPricing();
 
   return (
     <>
@@ -43,7 +44,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
               label="Planes"
               active={false}
               variant="desktop"
-              href="/planes"
+              onClick={scrollToPricing}
             />
           </div>
         </div>

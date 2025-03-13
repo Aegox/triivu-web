@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
-import { dropdownData } from "../Common/constants";
+import { dropdownData } from "../../../constants/Navbar.ts";
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
+import useScrollToPricing from "../../../constants/useScroll.ts";
+
 
 const soluciones = dropdownData.soluciones;
 
@@ -21,6 +23,8 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
 }) => {
+  const { scrollToPricing } = useScrollToPricing();
+
   return (
     <>
       {/* Barra Principal Mobile */}
@@ -98,7 +102,10 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           label="Planes"
           active={false}
           variant="mobile"
-          href="/planes"
+          onClick={(e) => {
+            scrollToPricing(e); 
+            setIsMobileMenuOpen(!isMobileMenuOpen)
+          }}
         />
 
         <div className="mt-auto flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">

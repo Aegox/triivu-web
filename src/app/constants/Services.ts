@@ -1,5 +1,3 @@
-import React from "react";
-import Services from "./Services";
 
 export interface cardDataProps {
   title: string;
@@ -12,17 +10,17 @@ interface cards {
   description: string;
 }
 
-const cardDataFree: cards = {
+export const cardDataFree: cards = {
   title: "Servicios Gratuitos",
   description: "Estos productos son gratuitos hasta que acaben tus créditos."
 }
 
-const cardDataPay: cards = {
+export const cardDataPay: cards = {
   title: "Servicios de Plan Pago",
   description: ""
 }
 
-const cardsData: cardDataProps[] = [
+export const cardsData: cardDataProps[] = [
   {
     title: 'TARJETA DE CLIENTE FRECUENTE',
     description: 'Inscribe a tus clientes más fieles y comienza a crear tu comunidad.',
@@ -55,7 +53,7 @@ const cardsData: cardDataProps[] = [
   },
 ];
 
-const cardsData2: cardDataProps[] = [
+export const cardsData2: cardDataProps[] = [
   {
     title: 'URL PERSONALIZADA',
     description: 'Aplicación directamente con tu dominio y URL.',
@@ -83,13 +81,3 @@ const cardsData2: cardDataProps[] = [
   },
 ];
 
-const ServicesRender: React.FC = () => {
-  return (
-    <div className="flex flex-col  gap-28 py-32 bg-gray-50">
-      <Services cardsData={cardsData} title={cardDataFree.title} description={cardDataFree.description}/>     
-      <Services cardsData={cardsData2} title={cardDataPay.title} description={cardDataPay.description}/>
-    </div>
-  );
-};
-
-export default ServicesRender;

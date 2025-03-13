@@ -1,12 +1,8 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { messages } from "../../constants/HomeSlider.tsx";
 
-const messages = [
-  "Tu negocio puede crecer sus ventas constantemente",
-  "Tus clientes son los portavoces de tu marca",
-  "Creas tu propia comunidad",
-];
 
 const TextSliderWithButtons = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
