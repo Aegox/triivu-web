@@ -13,31 +13,31 @@ const steps: Step[] = [
     title: 'REFERIR',
     description:
       'Tus clientes refieren a sus familiares y amigos para que obtengan una Tarjeta virtual.',
-    icon: <FaShareAlt className="text-3xl text-orange-400" />,
+    img: "/step1.jpg",
   },
   {
     title: 'RECOMPENSA',
     description:
       'Tus clientes obtienen puntos y dinero en su cuenta para gastar en tu negocio.',
-    icon: <FaCoins className="text-3xl text-orange-400" />,
+    img: "/step2.jpg",
   },
   {
     title: 'NUEVO CLIENTE',
     description:
       'El referido creará una tarjeta y tendrá sus datos y su primera recarga.',
-    icon: <FaUserPlus className="text-3xl text-orange-400" />,
+    img: "/step3.jpg",
   },
   {
     title: 'CRECE',
     description:
       'Los nuevos clientes se fidelizan con tu negocio y la cadena vuelve a iniciar.',
-    icon: <FaChartLine className="text-3xl text-orange-400" />,
+    img: "/step4.jpg",
   },
 ];
 
 const FifthContainer: React.FC = () => {
   return (
-    <section className="bg-gray-50 py-32 px-4">
+    <section className="bg-gray-50 py-32 px-10">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
           TUS CLIENTES, SERÁN TU MEJOR MARKETING
@@ -58,7 +58,7 @@ const FifthContainer: React.FC = () => {
               </div>
               {/* Contenido centrado */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                <div className="mb-4">{step.icon}</div>
+                <img src={step.img} alt="a step image for clients"/>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {step.title}
                 </h3>

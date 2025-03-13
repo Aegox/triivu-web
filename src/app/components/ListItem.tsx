@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
 
 interface ListItemProps {
   text: string;
@@ -6,8 +7,8 @@ interface ListItemProps {
 
 const ListItem: React.FC<ListItemProps> = ({ text }) => {
   return (
-    <li className="flex">
-      <span className="p-2 text-white w-[7px] h-[7px] rounded-[100%] flex items-center justify-center bg-[var(--color-primary)] mr-2">✓</span>
+    <li className="flex items-center gap-2">
+      <FaCheckCircle className="text-orange-400" />
       {text}
     </li>
   );
