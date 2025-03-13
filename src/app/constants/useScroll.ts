@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import { useCallback } from 'react'; // Importa useCallback
+import { useCallback } from 'react';
 
 const useScrollToPricing = () => {
   const router = useRouter();
@@ -12,7 +12,10 @@ const useScrollToPricing = () => {
         behavior: 'smooth',
       });
     } else {
-      router.push('/').then(() => {
+      // Usar window.location.href en lugar de router.push
+      window.location.href = '/';
+      // Esperar un momento para que la página se cargue antes de hacer scroll
+      setTimeout(() => {
         const newElement = document.getElementById("planes");
         if (newElement) {
           window.scrollTo({
@@ -20,11 +23,12 @@ const useScrollToPricing = () => {
             behavior: 'smooth',
           });
         }
-      });
+      }, 500); // Ajusta el tiempo según sea necesario
     }
-  }, [router]); // router como dependencia de useCallback
+  }, [router]);
 
   return { scrollToPricing };
 };
 
 export default useScrollToPricing;
+
