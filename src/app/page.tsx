@@ -5,7 +5,6 @@ import ThirdContainer from "./components/ThirdContainer";
 import FourthContainer from "./components/FourthContainer";
 import FifthContainer from "./components/FifthContainer";
 import Pricing from "./components/Pricing";
-import Services from "./components/Services";
 import ServicesRender from "./components/ServicesRender";
 import Questions from "./components/Questions";
 
