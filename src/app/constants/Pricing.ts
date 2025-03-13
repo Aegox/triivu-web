@@ -7,7 +7,7 @@ interface PricingCardData {
   buttonText: string;
 }
 
-export const cuentaGratuita = {
+export const cuentaGratuita: PricingCardData = {
   title: "CUENTA GRATUITA",
   description: "Ideal para prueba de funcionalidades",
   features: [
@@ -21,7 +21,7 @@ export const cuentaGratuita = {
   buttonText: "¡Registrate!",
 };
 
-export const pagoPorUso = {
+export const pagoPorUso: PricingCardData = {
   title: "PAGO POR USO",
   description:
     "Ideal para personas que quieren exponenciar sus negocios sin gastar mucho y aprovechando al máximo sus clientes",

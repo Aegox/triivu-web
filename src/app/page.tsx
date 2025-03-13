@@ -7,7 +7,6 @@ import FifthContainer from "./components/FifthContainer";
 import Pricing from "./components/Pricing";
 import ServicesRender from "./components/Services";
 import Questions from "./components/Questions";
-import DesktopNavbar from "./components/Navbar/Desktop/DesktopNavbar";
 
 const Render: React.FC = () => {
   return (
