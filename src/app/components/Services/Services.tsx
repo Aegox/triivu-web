@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicesCard from './ServicesCard';
-import { cardDataProps } from './ServicesRender';
+import { cardDataProps } from '../../constants/Services';
 
 interface ServicesProps {
   cardsData: cardDataProps[];
