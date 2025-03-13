@@ -20,7 +20,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   buttonText,
 }) => {
   return (
-    <div className="w-full hover:bg-gray-100 bg-white shadow-lg h-[650px] flex flex-col border border-gray rounded-3xl p-8 lg:w-[45%]">
+    <div className="w-full hover:bg-gray-100 bg-white shadow-lg h-full md:h-[650px] flex flex-col border border-gray rounded-3xl p-8 lg:w-[45%]">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="font-light text-gray-700 mb-4">{description}</p>
       <ul className="flex flex-col w-full gap-2 list-none p-0">
@@ -29,7 +29,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         ))}
       </ul>
 
-      <div className="flex flex-col mt-auto">
+      <div className="flex flex-col md:mt-auto mt-[50px]">
         <span className="font-bold text-2xl text-orange-400 mt-2">{footerTextTitle}</span>
         <span className="text-sm mt-2">{footerTextInfo}</span>
       <div className="mt-8">
