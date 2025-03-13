@@ -1,10 +1,10 @@
 import React from "react";
 import CategoryButton from "../Common/CategoryButton";
-import { dropdownData } from "../../../constants/Navbar.ts";
+import { dropdownData } from "../../../constants/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
-import useScrollToPricing from "../../../constants/useScroll.ts";
+import useScrollToPricing from "../../../constants/useScroll";
 
 const soluciones = dropdownData.soluciones;
 

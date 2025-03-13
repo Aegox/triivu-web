@@ -1,6 +1,6 @@
 import React from "react";
 import Services from "./Services";
-import { cardDataFree , cardsData2 , cardDataPay , cardsData } from "../../constants/Services.ts";
+import { cardDataFree , cardsData2 , cardDataPay , cardsData } from "../../constants/Services";
 
 const ServicesRender: React.FC = () => {
   return (

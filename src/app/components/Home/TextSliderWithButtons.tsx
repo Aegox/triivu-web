@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { messages } from "../../constants/HomeSlider.tsx";
+import { messages } from "../../constants/HomeSlider";
 
 
 const TextSliderWithButtons = () => {

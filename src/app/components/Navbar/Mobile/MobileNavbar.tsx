@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import CategoryButton from "../Common/CategoryButton";
-import { dropdownData } from "../../../constants/Navbar.ts";
+import { dropdownData } from "../../../constants/Navbar";
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
-import useScrollToPricing from "../../../constants/useScroll.ts";
+import useScrollToPricing from "../../../constants/useScroll";
 
 
 const soluciones = dropdownData.soluciones;

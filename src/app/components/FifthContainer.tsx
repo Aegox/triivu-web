@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { steps } from '../constants/Steps.tsx';
+import { steps } from '../constants/Steps';
 
 const FifthContainer: React.FC = () => {
   return (

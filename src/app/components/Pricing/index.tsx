@@ -1,6 +1,6 @@
 import React from  "react";
 import PricingCard from  "./PricingCard";
-import {cuentaGratuita , pagoPorUso } from  "../../constants/Pricing.ts";
+import {cuentaGratuita , pagoPorUso } from  "../../constants/Pricing";
 
 const Pricing: React.FC = () => {
 
