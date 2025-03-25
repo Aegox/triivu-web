@@ -4,14 +4,14 @@ import { steps } from '../constants/Steps';
 
 const FifthContainer: React.FC = () => {
   return (
-    <section className="bg-gray-50 py-32 px-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-50 py-14 xl:py-32 px-10">
+            <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          TUS CLIENTES, SERÁN TU MEJOR MARKETING
-        </h2>
+              TUS CLIENTES, SERÁN TU MEJOR MARKETING
+              </h2>
         <p className="text-lg text-center text-gray-600 mb-20">
           Tus clientes fieles te ayudarán a crecer trayendo nuevos clientes y compras; tu base de clientes frecuentes puede pasar de un 20% a un 50% sin gastar en publicidad.
-        </p>
+              </p>
         {/* Grid horizontal con tarjetas verticales (proporción 9:16) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
@@ -19,6 +19,7 @@ const FifthContainer: React.FC = () => {
               key={index}
               className="relative bg-white border rounded-lg shadow-md overflow-hidden aspect-[9/16]"
             >
+
               {/* Número de paso */}
               <div className="absolute top-2 left-2 bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg">
                 {index + 1}
