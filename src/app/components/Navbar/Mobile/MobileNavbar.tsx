@@ -6,7 +6,6 @@ import { dropdownData } from "../../../constants/Navbar";
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
-import useScrollToPricing from "../../../constants/useScroll";
 
 
 const soluciones = dropdownData.soluciones;
@@ -24,11 +23,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
 }) => {
-  const { scrollToPricing } = useScrollToPricing();
-  const handlePlanesClick = () => {
-    scrollToPricing();
-    setIsMobileMenuOpen(false);
-  };
+
 
   return (
     <>

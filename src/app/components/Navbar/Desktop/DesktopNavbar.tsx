@@ -4,7 +4,6 @@ import { dropdownData } from "../../../constants/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { FaHeart, FaUserFriends, FaMoneyBillWave } from "react-icons/fa";
-import useScrollToPricing from "../../../constants/useScroll";
 
 const soluciones = dropdownData.soluciones;
 
@@ -21,7 +20,6 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   menuHeight,
   menuRef,
 }) => {
-  const { scrollToPricing } = useScrollToPricing();
 
   return (
     <>
