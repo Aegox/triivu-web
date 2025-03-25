@@ -107,7 +107,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           label="Planes"
           active={false}
           variant="mobile"
-          onClick={handlePlanesClick}
+          href="/planes"
         />
 
         <div className="mt-auto flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">

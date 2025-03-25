@@ -16,9 +16,6 @@ const Render: React.FC = () => {
       <ThirdContainer />
       <FourthContainer />
       <FifthContainer />
-      <Pricing />
-      <ServicesRender />
-      <Questions />
     </div>
   );
 };

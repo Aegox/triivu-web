@@ -1,7 +1,8 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
-import MobileNavbar from "./Mobile/MobileNavbar"
-import DesktopNavbar from "./Desktop/DesktopNavbar"
+import { usePathname } from 'next/navigation';
+import MobileNavbar from "./Mobile/MobileNavbar";
+import DesktopNavbar from "./Desktop/DesktopNavbar";
 
 const Navbar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string>("");
@@ -9,10 +10,10 @@ const Navbar: React.FC = () => {
   const [isNavbarBlack, setIsNavbarBlack] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null!);
-
+  const pathname = usePathname(); // Obtener la ruta actual
 
   const toggleMenu = (menu: string) => {
-    setActiveMenu((prev) => (prev === menu ? "": menu));
+    setActiveMenu((prev) => (prev === menu ? "" : menu));
   };
 
   useEffect(() => {
@@ -23,22 +24,21 @@ const Navbar: React.FC = () => {
     }
   }, [activeMenu]);
 
-  // Efecto combinado: navbar negro al hacer scroll o tener un menú activo
+  // Efecto combinado: navbar negro si la ruta es /planes o al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50 || activeMenu !== "") {
+      if (window.scrollY > 50 || activeMenu !== "" || pathname === "/planes") {
         setIsNavbarBlack(true);
       } else {
         setIsNavbarBlack(false);
       }
     };
 
-    // Ejecuta para establecer el estado inicial
-    handleScroll();
+    handleScroll(); // Para establecer el estado inicial
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeMenu]);
+  }, [activeMenu, pathname]);
 
   const navbarStyle = isNavbarBlack
     ? "bg-[var(--color-black)]"
@@ -72,3 +72,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
