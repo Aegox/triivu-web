@@ -103,6 +103,8 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
           active={false}
           variant="mobile"
           href="/planes"
+          onClick={() => setIsMobileMenuOpen(false)}
+
         />
 
         <div className="mt-auto flex flex-wrap flex-col md:flex-row md:justify-center items-center space-y-4 md:space-y-0 md:space-x-4 px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">

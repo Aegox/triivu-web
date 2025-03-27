@@ -24,6 +24,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     variant === 'desktop'
       ? "text-[var(--color-white)] hover:bg-[var(--color-gray-700)] px-3 py-2 rounded-md focus:outline-none"
       : "text-xl py-4 focus:outline-none text-[var(--color-white)] hover:bg-[var(--color-gray-700)]";
+
   const content = (
     <>
       <div className="flex items-center justify-center space-x-2">
@@ -35,13 +36,19 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
       ></span>
     </>
   );
+
   if (href) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link 
+        href={href} 
+        className={baseClasses}
+        onClick={onClick} // ✅ onClick aplicado al Link
+      >
         {content}
       </Link>
     );
   }
+
   return (
     <button onClick={onClick} className={baseClasses}>
       {content}
@@ -50,3 +57,4 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
 };
 
 export default CategoryButton;
+
