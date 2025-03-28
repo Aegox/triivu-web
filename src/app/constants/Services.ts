@@ -81,3 +81,27 @@ export const cardsData2: cardDataProps[] = [
   },
 ];
 
+export const cardsData3: cardDataProps[] = [
+  {
+    title: 'STATUS DE CLIENTES',
+    description: 'Dale un Status a tus clientes dependiendo su recurrencia de compra.',
+    icon: "/client-status.png",
+  },
+  {
+    title: 'DESCUENTOS',
+    description: 'Descuentos por recargas y según el status.',
+    icon: "/descuento.png",
+  },
+  {
+    title: 'PREMIOS',
+    description: 'Ofrece premios por cumplir desafíos como: 8 visitas en 1 mes, Gastar más de 1 millón de pesos en 1 mes, Más de 3 visitas en una semana, Referir más de 10 clientes nuevos en 3 meses',
+    icon: "/premio.png",
+  },
+  {
+    title: 'OFERTAS',
+    description: 'Ofertas por tiempo limitado para atraer a tus clientes a hacer compras, Ofertas relámpago para consumo en tiempos muertos, ofertas limitadas, para clientes de un Status alto.',
+    icon: "/oferta.png",
+  }
+];
+
+

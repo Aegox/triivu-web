@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   // Efecto combinado: navbar negro si la ruta es /planes o al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50 || activeMenu !== "" || pathname === "/planes") {
+      if (window.scrollY > 50 || activeMenu !== "" || pathname === "/planes" || pathname === "/fidelizacion") {
         setIsNavbarBlack(true);
       } else {
         setIsNavbarBlack(false);
