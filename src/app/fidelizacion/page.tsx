@@ -26,8 +26,8 @@ const ServicesInfo = {
 const Fidelizacion: React.FC = () => {
     return (
         <div>
-            <Presentation img={data.img} title={data.title} content={data.content} button={data.button} reverse={true} styles="md:pt-40 pt-32"/>
-            <Presentation img={data1.img} title={data1.title} content={data1.content} button={data1.button} reverse={false} styles="md:py-10 bg-white"/>
+            <Presentation img={data.img} title={data.title} content={data.content} button={data.button} reverse={true} styles="md:pt-40 pt-32 text-gray-800"/>
+            <Presentation img={data1.img} title={data1.title} content={data1.content} button={data1.button} reverse={false} styles="md:py-10 bg-white text-gray-800"/>
             <section className="py-10 md:py-28 bg-gray-100">
                 <Services styles="bg-gray-100 lg:px-0 justify-center items-center" cardsData={cardsData3} title={ServicesInfo.title} description="" />
             </section>
