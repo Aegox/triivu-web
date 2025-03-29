@@ -1,6 +1,7 @@
 import Presentation from "../components/Presentation";
 import Services from "../components/Services/Services";
 import AppCustom from "../components/AppCustom";
+import ControlCash from "../components/ControlCash";
 import { cardsData3 } from "../constants/Services";
 import React from "react";
 
@@ -30,6 +31,7 @@ const Fidelizacion: React.FC = () => {
             <section className="py-10 md:py-28 bg-gray-100">
                 <Services styles="bg-gray-100 lg:px-0 justify-center items-center" cardsData={cardsData3} title={ServicesInfo.title} description="" />
             </section>
+            <ControlCash/>
             <AppCustom/>
         </div>
     )
