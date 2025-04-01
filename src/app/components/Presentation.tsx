@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface dataPrenset {
+interface dataPresent {
     title: string;
     content: string;
     button: string;
