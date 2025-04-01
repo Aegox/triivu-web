@@ -6,7 +6,7 @@ interface dataPresent {
     content: string;
     button: string;
     img: string;
-    reverse: boolean;
+    reverse?: boolean;
     styles: string;
 }
 
