@@ -26,9 +26,9 @@ const ServicesRender: React.FC = () => {
       
       {/* Render Services based on active tab */}
       {activeTab === "paid" ? (
-        <Services cardsData={cardsData2} title={cardDataPay.title} description={cardDataPay.description} />
+        <Services cardsData={cardsData2} title={cardDataPay.title} description={cardDataPay.description} cardImgMode="normal" fontMode="light" hoverMode="active"/>
       ) : (
-        <Services cardsData={cardsData} title={cardDataFree.title} description={cardDataFree.description} />
+        <Services cardsData={cardsData} title={cardDataFree.title} description={cardDataFree.description} cardImgMode="normal" fontMode="light" hoverMode="active"/>
       )}
     </div>
   );

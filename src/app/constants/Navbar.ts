@@ -1,12 +1,14 @@
 export interface DropdownItem {
   title: string;
+  link: string;
   items: string[];
 }
 
 export const dropdownData: Record<string, DropdownItem[]> = {
   soluciones: [
     { 
-      title: "Fidelización", 
+      title: "Fidelización",
+      link: "/fidelizacion",
       items: [
         "Tus clientes recargan saldo",
         "Tu tienes el control del dinero de tu cliente",
@@ -16,6 +18,7 @@ export const dropdownData: Record<string, DropdownItem[]> = {
     },
     { 
       title: "Referidos", 
+      link: "/referidos",
       items: [
         "Tus clientes traen más clientes", 
         "Marketing voz a voz",
@@ -24,6 +27,7 @@ export const dropdownData: Record<string, DropdownItem[]> = {
       ]
     },{ 
       title: "Comisiones", 
+      link: "/comisiones",
       items: [
         "Puedes medir las ventas por influenciador o vendedor",
         "Pagas solo bajo resultados",
