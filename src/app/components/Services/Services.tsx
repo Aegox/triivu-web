@@ -15,7 +15,7 @@ interface ServicesProps {
 const Services: React.FC<ServicesProps> = ({ cardsData , title , description , styles , cardImgMode , fontMode , hoverMode }) => {
   return (
     <div className={` ${ styles ? styles : ""} flex flex-col justify-center px-5 lg:px-[10%] w-full h-full`}>
-      <h1 className="text-2xl xl:text-3xl font-bold text-[var(--heading-color)] mb-4 ">{title}</h1>
+      <h1 className="text-2xl text-center xl:text-3xl font-bold text-[var(--heading-color)] mb-4 ">{title}</h1>
       <p className="font-light text-lg text-[var(--heading-color)] mb-10">{description}</p>
       <div className="flex flex-wrap gap-5 ">
         {cardsData.map((card, index) => (

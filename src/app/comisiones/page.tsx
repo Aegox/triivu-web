@@ -40,22 +40,22 @@ export const cardsData6: cardDataProps[] = [
   {
     title: "INFLUENCIADORES",
     description: "Trabaja con creadores de contenido, sin tener que pagar, únicamente por conversiones y resultados.",
-    icon: "/influenciadores.png",
+    icon: "/influencers.png",
   },
   {
     title: "ALIANZAS CORPORATIVAS",
     description: "Crea alianzas que formen una base sólida de consumo recurrente, sin tener que gastar muchos recursos, solo pagas por comisiones y recargas.",
-    icon: "/alianzas-corporativas.png",
+    icon: "/alianzas.png",
   },
   {
     title: "EMBAJADORES DE MARCA",
     description: "Tus clientes pueden referir amigos y familiares o incluso hacer contenido en redes, y solo pagas por los clientes nuevos y la primera recarga.",
-    icon: "/embajadores-marca.png",
+    icon: "/embajador.png",
   },
   {
     title: "MÉTRICAS Y DECISIONES",
     description: "Tendrás un panel de estadísticas, donde podrás medir todo y tomar mejores decisiones.",
-    icon: "/metricas-decisiones.png",
+    icon: "/metricas.png",
   }
 ];
 
@@ -63,7 +63,7 @@ const Comisiones: React.FC = () => {
   return (
     <div>
       {/* Primer Contenedor */}
-      <Presentation title={data1.title} content={data1.content} button={data1.button} img={data1.img} styles="text-gray-800 md:pt-40" />
+      <Presentation title={data1.title} content={data1.content} button={data1.button} img={data1.img} styles="text-gray-800 pt-28 md:pt-40" />
       <Presentation title={data2.title} content={data2.content} button={data2.button} img={data2.img} styles="bg-gray-900 text-white" reverse={true} />
       <Presentation title={data3.title} content={data3.content} button={data3.button} img={data3.img} styles="text-gray-800 bg-white" />
       <Presentation title={data4.title} content={data4.content} button={data4.button} img={data4.img} styles="bg-gray-100 text-white bg-gray-800" reverse={true}/>

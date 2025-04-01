@@ -74,10 +74,11 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
                     {index === 2 && (
                       <FaMoneyBillWave className="text-orange-400 text-xl" />
                     )}
-                    <span className="text-lg text-orange-400 relative inline-block">
+                    <Link onClick={() => setIsMobileMenuOpen(false)} href={solucion.link} className="text-lg text-orange-400 relative inline-block">
+          
                       {solucion.title}
                       <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                    </span>
+                    </Link>
                   </div>
                   <ul className="flex list-disc flex-col gap-1 text-sm">
                     {solucion.items.map((item, i) => (
