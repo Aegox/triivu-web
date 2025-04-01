@@ -1,5 +1,6 @@
 import Presentation from "../components/Presentation";
 import Services from "../components/Services/Services";
+import { cardDataProps } from "../constants/Services";
 
 const data1 = {
   title: "MAXIMIZA TUS VENTAS Y OPTIMIZA TUS RECURSOS, MIENTRAS AHORRAS EN PUBLICIDAD.",
@@ -36,7 +37,7 @@ const data5 = {
   img: "/embajadores.jpg"
 };
 
-export const cardsData6: cardDataProps[] = [
+const cardsData: cardDataProps[] = [
   {
     title: "INFLUENCIADORES",
     description: "Trabaja con creadores de contenido, sin tener que pagar, únicamente por conversiones y resultados.",
@@ -71,7 +72,7 @@ const Comisiones: React.FC = () => {
       <section className="py-10 md:py-28 bg-gray-100">
          <Services
             styles="bg-gray-100 lg:px-0 xl:px-0 justify-center items-center"
-            cardsData={cardsData6}
+            cardsData={cardsData}
             title="TODO LO QUE PUEDES HACER CON ESTE MÓDULO ESPECIALIZADO EN CRECIMIENTO BAJO RESULTADOS."
             description=""
             cardImgMode="unborder"
