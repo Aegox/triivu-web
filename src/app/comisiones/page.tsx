@@ -6,57 +6,57 @@ const data1 = {
   title: "MAXIMIZA TUS VENTAS Y OPTIMIZA TUS RECURSOS, MIENTRAS AHORRAS EN PUBLICIDAD.",
   content: "Solo pagas por cada cliente que llega, recarga o compra efectiva, los clientes de tu comunidad pueden ser tus embajadores de marca, los comerciales, pueden ganar por alianzas efectivas y los creadores de contenido o influenciadores, por resultados medibles.",
   button: "¡Conoce más!",
-  img: "/maximiza-ventas.jpg"
+  img: "/maximiza-ventas.webp"
 };
 
 const data2 = {
   title: "MIDE LAS VENTAS POR REFERIDOS, COMERCIALES E INFLUENCIADORES.",
   content: "<p style='width:89%;'>Controla todos tus ingresos y costos por referidos, que han llegado a través de tus clientes frecuentes, comerciales o influenciadores, te damos la herramienta para que tomes mejores decisiones y tu negocio sea más rentable y exponencial.</p>",
   button: "¡Contáctenos para saber más!",
-  img: "/metricas.jpg"
+  img: "/metricas.webp"
 };
 
 const data3 = {
   title: "PAGAS SOLO POR RESULTADOS",
   content: "Podrás trabajar con creadores de contenido e influenciadores pagando solamente por clientes efectivos y resultados medibles, ya que ellos generan comisiones únicamente, por las personas que abran una nueva cuenta con su código de referido.",
   button: "¡Comienza a crecer!",
-  img: "/pago-por-resultados.jpg"
+  img: "/pago-por-resultados.webp"
 };
 
 const data4 = {
   title: "<p style='width:89%;'>PAGAS POR ALIANZAS EFECTIVAS Y CUENTAS EMPRESARIALES RECARGADAS.</p>",
   content: "<p style='width:89%;'>Tus comerciales, cierran alianzas estratégicas con instituciones, empresas o grupos, y solo pagas por las recargas de estas nuevas cuentas, entre más recarguen más gana tu negocio, y más gana tu comercial.</p>",
   button: "¡Comienza a crecer!",
-  img: "/alianzas-efectivas.jpg"
+  img: "/alianzas-efectivas.webp"
 };
 
 const data5 = {
   title: "TUS CLIENTES SON TUS EMBAJADORES DE MARCA",
   content: "Tus clientes ganan comisiones en dinero por traer nuevos clientes que abran una nueva cuenta y recarguen en ella.",
   button: "¡Comienza a crecer!",
-  img: "/embajadores.jpg"
+  img: "/embajadores.webp"
 };
 
 const cardsData: cardDataProps[] = [
   {
     title: "INFLUENCIADORES",
     description: "Trabaja con creadores de contenido, sin tener que pagar, únicamente por conversiones y resultados.",
-    icon: "/influencers.png",
+    icon: "/influencers.webp",
   },
   {
     title: "ALIANZAS CORPORATIVAS",
     description: "Crea alianzas que formen una base sólida de consumo recurrente, sin tener que gastar muchos recursos, solo pagas por comisiones y recargas.",
-    icon: "/alianzas.png",
+    icon: "/alianzas.webp",
   },
   {
     title: "EMBAJADORES DE MARCA",
     description: "Tus clientes pueden referir amigos y familiares o incluso hacer contenido en redes, y solo pagas por los clientes nuevos y la primera recarga.",
-    icon: "/embajador.png",
+    icon: "/embajador.webp",
   },
   {
     title: "MÉTRICAS Y DECISIONES",
     description: "Tendrás un panel de estadísticas, donde podrás medir todo y tomar mejores decisiones.",
-    icon: "/metricas.png",
+    icon: "/metricas-icon.webp",
   }
 ];
 

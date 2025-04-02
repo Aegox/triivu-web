@@ -9,14 +9,14 @@ const data = {
   title: '<h1>AUMENTA TUS <span style="color: darkorange;">INGRESOS</span> EXPONENCIALMENTE</h1>',
   content: "<p style='width:80%;'>Aumenta tus ingresos mensuales con las recargas de tus clientes y triplica la recurrencia.</p>",
   button: "Comienza gratis!",
-  img: "/fidelizacion2.jpg"
+  img: "/fidelizacion2.webp"
 };
 
 const data1 = {
     title: "CREA TU COMUNIDAD",
     content: "Utiliza nuestra App para crear cuentas a todos tus clientes fieles, haz que se sientan parte de tu negocio, consientelos y fidelizalos mediante: descuentos, recompensas y regalos por su fidelidad.",
     button: "Conoce más!",
-    img: "/comunidad.jpg"
+    img: "/comunidad.webp"
 }
 
 const ServicesInfo = {
